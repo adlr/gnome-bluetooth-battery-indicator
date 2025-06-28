@@ -12,7 +12,7 @@ export const IndicatorController = GObject.registerClass(
     class Indicator extends PanelMenu.Button {
         _init() {
             super._init(0.0, _('Bluetooth battery Indicator'));
-            this._container = new St.BoxLayout();
+            this._container = new St.BoxLayout({x_align: Clutter.ActorAlign.CENTER});
             this._labels = [];
             this._icons = [];
             this._prevDevicesSettings = [];
