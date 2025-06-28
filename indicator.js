@@ -29,7 +29,7 @@ export const IndicatorController = GObject.registerClass(
             }
 
             devices.forEach((device, index) => {
-                this.setPercentLabel(device.batteryPercentage, index);
+                this.setPercentLabel(device.batteryPercentage.replace("%", ""), index);
             });
 
             this._prevDevicesSettings = devicesSettings;
@@ -75,9 +75,9 @@ export const IndicatorController = GObject.registerClass(
 
         _getBoxLabel() {
             const label = new St.Label({
-                y_align: Clutter.ActorAlign.CENTER
+                x_align: Clutter.ActorAlign.CENTER
             });
-            label.set_style('margin-right: 5px;');
+            //label.set_style('margin-right: 5px;');
 
             return label;
         }
@@ -87,7 +87,7 @@ export const IndicatorController = GObject.registerClass(
                 icon_name: device.icon || 'battery-full-symbolic',
                 style_class: 'system-status-icon',
             });
-            icon.set_style('margin-right: 0px;');
+            //icon.set_style('margin-right: 0px;');
 
             return icon;
         }
