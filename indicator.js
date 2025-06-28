@@ -62,7 +62,7 @@ export const IndicatorController = GObject.registerClass(
         }
 
         _getBox(device, index) {
-            const box = new St.BoxLayout({style_class: 'panel-status-menu-box'});
+            const box = new St.BoxLayout({ vertical: true, style_class: 'panel-status-menu-box' });
 
             this._icons[index] = this._getBoxIcon(device);
             this._labels[index] = this._getBoxLabel();
